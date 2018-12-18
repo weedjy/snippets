@@ -1,3 +1,21 @@
+/*
+Sample Input:
+3
+apple - malum, pomum, popula
+fruit - baca, bacca, popum
+punishment - malum, multa
+
+Sample Output:
+7
+baca - fruit
+bacca - fruit
+malum - apple, punishment
+multa - punishment
+pomum - apple
+popula - apple
+popum - fruit
+*/
+
 #include <iostream>
 #include <string>
 #include <set>
