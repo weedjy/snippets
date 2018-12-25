@@ -1,0 +1,12 @@
+par(bg = "white");
+a <- seq(-1, 1, length = 50);
+b <- 5*a/4;
+z <- outer(a, b, function(x, y) 5 + (-sqrt(1-x*x-(y-abs(x))*(y-abs(x))))*cos(30*((1-x*x-(y-abs(x))*(y-abs(x))))));
+nrz <- nrow(z);
+ncz <- ncol(z);
+jet.colors <- colorRampPalette( c("yellow", "coral") );
+nbcol <- 50;
+color <- jet.colors(nbcol);
+zfacet <- z[-1, -1] + z[-1, -ncz] + z[-nrz, -1] + z[-nrz, -ncz];
+facetcol <- cut(zfacet, nbcol);
+persp(a, b, z, col = color[facetcol], phi = 90, theta = -30);
