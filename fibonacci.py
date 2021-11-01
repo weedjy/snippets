@@ -16,6 +16,10 @@ def main():
     n = int(input())
     print(fib(n))
 
+    
+# fib in one line
+# print(f'Fibonacci nums: {" ".join((lambda f, *args: f(f, *args))((lambda f, n, a, b: [str(b)] + f(f, n - 1, b, a + b) if n else []), 20, 0, 1))}')
+
 
 if __name__ == "__main__":
     main()
